@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+
+        title Farhan Tahir  | CMS
+        link(rel='stylesheet' href='/dist/Admin.css')
+
+    body.bg-dark
+        .container
+            .card.card-login.mx-auto.mt-5
+                .card-header
+                    | Login
+                .card-body
+                    include ../../components/alerts/flashes
+                    form(method='POST' action='/admin/login/')
+                        .form-group
+                            label(for='email') Email address
+                            input#email.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email' name='email')
+                        .form-group
+                            label(for='password') Password
+                            input#password.form-control(type='password', placeholder='Password' name='password')
+                        button.btn.btn-primary.btn-block Login
+        script(src='/dist/Admin.bundle.js')

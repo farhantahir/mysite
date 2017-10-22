@@ -1,0 +1,9 @@
+extends  ../layouts/main
+include  ../mixins/_experienceForm
+block content
+    .content-wrapper
+        .container-fluid
+            +experienceForm(experience || undefined)
+
+
+

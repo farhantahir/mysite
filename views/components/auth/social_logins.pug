@@ -1,0 +1,17 @@
+include ../../mixins/auth/social_login_btn
+div(class='col-xs-12 social-media-div')
+    h4 OR
+    div.form-group
+        +socialLoginBtn({
+            socialMedia:'google',
+            text:'Sign in with Google',
+            id:'google_login',
+            onClick:'window.location.href="/auth/social/google";'
+        })
+    div.form-group
+        +socialLoginBtn({
+            socialMedia: 'facebook',
+            text: 'Sign in with Facebook',
+            id: 'google_login',
+            onClick: 'window.location.href="/auth/social/facebook";'
+        })

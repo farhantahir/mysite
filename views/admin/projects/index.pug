@@ -1,0 +1,11 @@
+extends  ../layouts/main
+include ../mixins/_datalist
+include ../mixins/_addNewButton
+block content
+    .content-wrapper
+            .container-fluid
+                include ../../components/alerts/flashes
+                +_addNewButton('New Project', '/admin/projects/new')
+                +dataList('Projects', ['Title', 'Description','Project URL','Tag','Sort'],['title','description','projectURL','tag','sort'],rows)
+
+

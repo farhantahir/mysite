@@ -1,0 +1,29 @@
+mixin projectForm(project = {})
+    .col-md-6
+        .card.mb-3
+            .card-header=`${ Object.keys(project).length ? `Edit ${project.title}` : 'New Project'}`
+            .card-body
+                include ../../components/alerts/flashes
+                -   const url = Object.keys(project).length ? `/admin/projects/${project.slug}` : `/admin/projects/`;
+                form(method='POST' action=url)
+                    if(Object.keys(project).length)
+                        input(type='hidden' value="put" name="_method")
+                    .form-group
+                        label(for='title') Title
+                        input#title.form-control(type='text', aria-describedby='titleHelp', placeholder='Enter title' name='title' value=project.title || null)
+                    .form-group
+                        label(for='sort') Description
+                        textarea(name='description' rows=10 cols=20 class='form-control')=project.description || null
+                    .form-group
+                        label(for='ProjectURL') Project URL
+                        input#ProjectURL.form-control(type='text', aria-describedby='ProjectURLHelp', placeholder='Enter Project URL' name='projectURL' value=project.projectURL || null)
+                    .form-group
+                        label(for='tag') Tag
+                        select#tag.form-control(aria-describedby='TagHelp' name='tag')
+                            option(value='' ) Select Tag
+                            option(value='open_source' selected=project && project.tag && project.tag == "open_source") Open Source
+                            option(value='company' selected=project && project.tag && project.tag == "company") Company
+                    .form-group
+                        label(for='sort') Sort Order
+                        input#sort.form-control(type='number', aria-describedby='sortHelp', placeholder='Project Sort' name='sort' value=project.sort || null)
+                    button.btn.btn-primary.btn-block Save

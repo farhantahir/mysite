@@ -1,0 +1,9 @@
+extends  ../layouts/main
+include  ../mixins/_projectForm
+block content
+    .content-wrapper
+        .container-fluid
+            +projectForm(project || undefined)
+
+
+

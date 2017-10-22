@@ -1,0 +1,7 @@
+mixin socialLoginBtn(options)
+    button(
+        class=`loginBtn ${`loginBtn--${options.socialMedia}`}`
+        id=options.id
+        onClick=options.onClick
+
+    )=options.text

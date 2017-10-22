@@ -1,0 +1,11 @@
+extends  ../layouts/main
+include ../mixins/_datalist
+include ../mixins/_addNewButton
+block content
+    .content-wrapper
+            .container-fluid
+                include ../../components/alerts/flashes
+                +_addNewButton('Add Experience', '/admin/experiences/new')
+                +dataList('Experiences', ['Job Title','Company', 'Description','From','end','Sort','Present'],['jobTitle','company','description','from','end','sort','presentText'],rows)
+
+

@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='stylesheet' href='/dist/Admin.css')
+        title My Blog Admin Panel
+
+    body#page-top.fixed-nav.sticky-footer.bg-dark
+        include ../components/navbar.pug
+
+        block content
+
+        include ../components/footer.pug
+        include ../components/scroll-to-top.pug
+        include ../components/modals/logout.pug
+        script(src='/admin/vendor/popper/popper.min.js')
+        script(src='/dist/Admin.bundle.js')

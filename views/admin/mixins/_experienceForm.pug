@@ -1,0 +1,34 @@
+mixin experienceForm(experience = {})
+    .col-md-6
+        .card.mb-3
+            .card-header=`${ Object.keys(experience).length ? `Edit Experience` : 'New Experience'}`
+            .card-body
+                include ../../components/alerts/flashes
+                -   const url = Object.keys(experience).length ? `/admin/experiences/${experience._id}` : `/admin/experiences/`;
+                form(method='POST' action=url)
+                    if(Object.keys(experience).length)
+                        input(type='hidden' value="put" name="_method")
+                    .form-group
+                        label(for='title') Job Title
+                        input#title.form-control(type='text', aria-describedby='titleHelp', placeholder='Enter Title' name='jobTitle' value=experience.jobTitle || null)
+                    .form-group
+                        label(for='company') Company
+                        input#company.form-control(type='text', aria-describedby='companyHelp', placeholder='Enter Company' name='company' value=experience.company || null)
+                    .form-group
+                        label(for='from') From Date (e.g August 2017)
+                        input#from.form-control(type='text', aria-describedby='fromHelp', placeholder='Enter From' name='from' value=experience.from || null)
+                    .form-group
+                        label(for='to') To Date (e.g August 2017)
+                        input#to.form-control(type='text', aria-describedby='toHelp', placeholder='Enter To' name='to' value=experience.to || null)
+                    .form-group
+                        label.control-label
+                            input(type="checkbox" name="present" id="present" checked=experience.present ? true : false)
+                            | Present
+
+                    .form-group
+                        label(for='sort') Description
+                        textarea(name='description' rows=10 cols=20 class='form-control')=experience.description || null
+                    .form-group
+                        label(for='sort') Sort Order
+                        input#sort.form-control(type='number', aria-describedby='sortHelp', placeholder='experience Sort' name='sort' value=experience.sort || null)
+                    button.btn.btn-primary.btn-block Save

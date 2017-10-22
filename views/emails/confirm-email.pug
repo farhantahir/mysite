@@ -1,0 +1,10 @@
+extends ../layouts/email
+
+block content
+    p Hi there,
+    p
+        | Please click on the button below to confirm your email.
+    +button(verifyUrl, actionText)
+
+    p Regards,
+    p BitArticles

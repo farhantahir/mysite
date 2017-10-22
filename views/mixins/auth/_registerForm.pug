@@ -1,0 +1,49 @@
+include ../_google_recaptcha
+mixin registerForm()
+    form(action='/register' method="post")
+        div.form-group
+            label(class='control-label' for='name') Name
+            input(
+            type="name"
+            class="form-control"
+            id="name"
+            placeholder="Name"
+            value=(old && old.name) ? old.name : ''
+            name="name"
+            required
+            autofocus
+            )
+        div.form-group
+            label(class='control-label' for='email') Email
+            input(
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+            value=(old && old.email) ? old.email : ''
+            name="email"
+            required
+            )
+        div.form-group
+            label(class='control-label' for='password') Password
+            input(
+            type="password"
+            class="form-control"
+            id="formInput11"
+            name="password"
+            placeholder="Password"
+            required
+            )
+        div.form-group
+            label(class='control-label' for='confirm_password') Confirm Password
+            input(
+            type="password"
+            class="form-control"
+            id="formInput11"
+            name="confirm_password"
+            placeholder="Confirm Password"
+            required
+            )
+        div(class='form-group')
+            +googleRecaptcha()
+        button(class='btn button-blue') Create my account

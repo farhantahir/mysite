@@ -1,0 +1,16 @@
+if locals.flashes
+    - const categories = Object.keys(locals.flashes)
+        each category in categories
+            - let
+            -    alertClass= ''
+            case category
+                when 'error'
+                    - alertClass= 'danger'
+                when 'success'
+                    - alertClass='success'
+                default
+                    - alertClass= 'info'
+            .alert(class=`alert-${alertClass} alert-dismissable`)
+                a(href="javascript:;" onClick="this.parentElement.remove()" class="close" data-dismiss="alert" aria-label="close") &times;
+                each message in flashes[category]
+                    p=message
