@@ -41,7 +41,7 @@ module.exports.edit = async (req, res) => {
 };
 
 module.exports.delete = async (req, res) => {
-	await Experience.remove({ slug: req.params.slug });
+	await Experience.remove({ _id: req.params.id});
 	req.flash('success', 'Experience deleted successfully');
 	res.redirect('/admin/experiences');
 };
