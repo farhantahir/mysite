@@ -28,7 +28,6 @@ module.exports.save = async (req, res) => {
 		const experience = new Experience(req.body);
 		await experience.save();
 	} else {
-		console.log(req.params.id,'req.params.id');
 		await Experience.findOneAndUpdate({ _id: req.params.id }, req.body);
 	}
 	req.flash('success', 'Experience saved successfully');
