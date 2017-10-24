@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*background: #DAE3E7 !important;*/
 }
 h1,
 h2,
@@ -161,9 +162,6 @@ iframe {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.section {
-  margin-bottom: 30px;
-}
 .section .section-inner {
   background: #fff;
   padding: 30px;
@@ -186,6 +184,7 @@ iframe {
 .latest .item .title {
   font-size: 18px;
   margin-top: 0;
+  font-weight:bolder;
 }
 .latest .item .title .label {
   margin-left: 5px;
