@@ -1,8 +1,9 @@
 import 'jquery';
-import '../plugins/bootstrap/js/bootstrap.min';
-import '../css/styles.css';
 import '../plugins/bootstrap/css/bootstrap.css';
+import '../plugins/bootstrap/js/bootstrap.min';
 import '../plugins/font-awesome/css/font-awesome.css';
+import '../css/styles.css';
+
 
 jQuery(document).ready(($) => {
 	/*= ====== Skillset *======= */
