@@ -30,6 +30,17 @@ const routeBuilder = (path = '/admin') => {
 	router.get(`${path}/experiences/:id`, isAuthenticated, ExperienceController.edit);
 	router.put(`${path}/experiences/:id`, isAuthenticated, ExperienceController.save);
 	router.delete(`${path}/experiences/:id`, isAuthenticated, ExperienceController.delete);
+
+	/**
+	 * Posts Controller
+	 */
+	router.get(`${path}/posts`, isAuthenticated, ExperienceController.index);
+	router.get(`${path}/posts/new`, isAuthenticated, ExperienceController.new);
+	router.post(`${path}/posts/`, isAuthenticated, AdminFormValidtions.newExperience, ExperienceController.save);
+	router.get(`${path}/posts/:id`, isAuthenticated, ExperienceController.edit);
+	router.put(`${path}/posts/:id`, isAuthenticated, ExperienceController.save);
+	router.delete(`${path}/posts/:id`, isAuthenticated, ExperienceController.delete);
+
 	return router;
 };
 

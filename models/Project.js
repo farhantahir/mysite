@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugs');
-const mongodbErrorHanlder = require('mongoose-mongodb-errors');
+const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const ProjectSchema = require('../schemas/Project');
 
 mongoose.Promise = global.Promise;
@@ -14,5 +14,5 @@ ProjectSchema.pre('save', async function (next) {
 	}
 	return next(); // move on saving
 });
-ProjectSchema.plugin(mongodbErrorHanlder);
+ProjectSchema.plugin(mongodbErrorHandler);
 module.exports = mongoose.model('Project', ProjectSchema);
