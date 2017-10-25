@@ -1,0 +1,11 @@
+extends  ../layouts/main
+include ../mixins/_datalist
+include ../mixins/_addNewButton
+block content
+    .content-wrapper
+            .container-fluid
+                include ../../components/alerts/flashes
+                +_addNewButton('New Post', '/admin/posts/new')
+                +dataList('Posts', ['Title', 'Description','Published','Published Date'],['title','description','published','publishedDate'],rows)
+
+

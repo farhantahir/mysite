@@ -4,6 +4,7 @@ const isAuthenticated = require('../middlewares/isAuthenticated');
 const ProjectController = require('../controllers/admin/ProjectController');
 const ExperienceController = require('../controllers/admin/ExperienceController');
 const AdminFormValidtions = require('../middlewares/adminFormValidations');
+const PostController = require('../controllers/admin/PostController');
 
 const router = express.Router();
 
@@ -34,12 +35,12 @@ const routeBuilder = (path = '/admin') => {
 	/**
 	 * Posts Controller
 	 */
-	router.get(`${path}/posts`, isAuthenticated, ExperienceController.index);
-	router.get(`${path}/posts/new`, isAuthenticated, ExperienceController.new);
-	router.post(`${path}/posts/`, isAuthenticated, AdminFormValidtions.newExperience, ExperienceController.save);
-	router.get(`${path}/posts/:id`, isAuthenticated, ExperienceController.edit);
-	router.put(`${path}/posts/:id`, isAuthenticated, ExperienceController.save);
-	router.delete(`${path}/posts/:id`, isAuthenticated, ExperienceController.delete);
+	router.get(`${path}/posts`, isAuthenticated, PostController.index);
+	router.get(`${path}/posts/new`, isAuthenticated, PostController.new);
+	router.post(`${path}/posts/`, isAuthenticated, AdminFormValidtions.newPost, PostController.save);
+	router.get(`${path}/posts/:id`, isAuthenticated, PostController.edit);
+	router.put(`${path}/posts/:id`, isAuthenticated, PostController.save);
+	router.delete(`${path}/posts/:id`, isAuthenticated, PostController.delete);
 
 	return router;
 };

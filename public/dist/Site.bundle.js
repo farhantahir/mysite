@@ -10332,13 +10332,13 @@ return jQuery;
 
 __webpack_require__(0);
 
-__webpack_require__(4);
-
 __webpack_require__(2);
 
-__webpack_require__(5);
-
 __webpack_require__(3);
+
+__webpack_require__(4);
+
+__webpack_require__(5);
 
 jQuery(document).ready(function ($) {
 	/*= ====== Skillset *======= */
@@ -10362,6 +10362,12 @@ jQuery(document).ready(function ($) {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10950,12 +10956,6 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
   });
 }(jQuery);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 4 */

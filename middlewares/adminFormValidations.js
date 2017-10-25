@@ -66,3 +66,7 @@ module.exports.newExperience = (req, res, next) => {
 	}
 	next();
 };
+
+module.exports.newPost = (req, res, next) => {
+	next();
+};

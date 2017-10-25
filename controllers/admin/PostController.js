@@ -1,5 +1,5 @@
 module.exports.index = (req, res) => {
-	res.render('posts/index');
+	res.render('admin/posts/index',{rows:[]});
 };
 
 module.exports.new = (req, res) => {
