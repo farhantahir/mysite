@@ -2,8 +2,15 @@ const mongoose = require('mongoose');
 
 const Project = mongoose.model('Project');
 const Experience = mongoose.model('Experience');
+const Post = mongoose.model('Post');
+
 module.exports.index = async (req, res) => {
-	res.render('index');
+	const posts = await Post.find({ published: true }, null, {
+		sort: {
+			publihsedDate: -1,
+		},
+	});
+	res.render('index', { posts });
 };
 
 module.exports.about = async (req, res) => {
