@@ -1,0 +1,28 @@
+mixin postForm(post = {})
+    .col-md-12
+        .card.mb-12
+            .card-header=`${ Object.keys(post).length ? `Edit ${post.title}` : 'New Post'}`
+            .card-body
+                include ../../components/alerts/flashes
+                -   const url = Object.keys(post).length ? `/admin/posts/${post._id}` : `/admin/posts/`;
+                form(method='POST' action=url)
+                    if(Object.keys(post).length)
+                        input(type='hidden' value="put" name="_method")
+                    .form-group
+                        label(for='title') Title
+                        input#title.form-control(type='text', aria-describedby='titleHelp', placeholder='Enter title' name='postTitle' value=post.postTitle || null)
+                    .form-group
+                        label(for='sort') Description
+                        textarea(name='description' rows=10 cols=20 class='form-control')=post.description || null
+                    .form-group
+                        label(for='date') Published Date
+                        input#date.form-control(type='date', aria-describedby='titleHelp', placeholder='Enter Date' name='publishedDate' value=post.publishedDate || null)
+                    .form-group
+                        label.control-label
+                            input(type="checkbox" name="published" id="published" checked=post.published ? true : false)
+                            | Published
+
+                    .form-group
+                        label(for='content') Content
+                        textarea(name='content' rows=100 cols=30 class='ckeditor')=post.content || null
+                    button.btn.btn-primary.btn-block Save

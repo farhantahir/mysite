@@ -64,9 +64,33 @@ module.exports.newExperience = (req, res, next) => {
 		req.flash('error', errors.map(err => err.msg));
 		return helpers.redirectBack(req, res);
 	}
-	next();
+	return next();
 };
 
 module.exports.newPost = (req, res, next) => {
-	next();
+	req.checkBody({
+		postTitle: {
+			notEmpty: true,
+			errorMessage: 'Title is required',
+		},
+		description: {
+			notEmpty: true,
+			errorMessage: 'Description is required',
+		},
+		publishedDate: {
+			notEmpty: true,
+			errorMessage: 'Published Date is required',
+		},
+		content: {
+			notEmpty: true,
+			errorMessage: 'Content is required',
+		},
+	});
+
+	const errors = req.validationErrors();
+	if (errors) {
+		req.flash('error', errors.map(err => err.msg));
+		return helpers.redirectBack(req, res);
+	}
+	return next();
 };

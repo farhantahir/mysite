@@ -1,9 +1,9 @@
 extends  ../layouts/main
-include  ../mixins/_experienceForm
+include  ../mixins/_postForm
 block content
     .content-wrapper
         .container-fluid
-            +experienceForm(experience || undefined)
+            +postForm(post || undefined)
 
-
-
+append scripts
+    script(src='/admin/vendor/ckeditor/ckeditor.js')

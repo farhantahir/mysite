@@ -18,5 +18,6 @@ html(lang='en')
         include ../components/footer.pug
         include ../components/scroll-to-top.pug
         include ../components/modals/logout.pug
-        script(src='/admin/vendor/popper/popper.min.js')
-        script(src='/dist/Admin.bundle.js')
+        block scripts
+            script(src='/admin/vendor/popper/popper.min.js')
+            script(src='/dist/Admin.bundle.js')

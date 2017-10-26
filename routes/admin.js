@@ -27,7 +27,7 @@ const routeBuilder = (path = '/admin') => {
 	 */
 	router.get(`${path}/experiences`, isAuthenticated, ExperienceController.index);
 	router.get(`${path}/experiences/new`, isAuthenticated, ExperienceController.new);
-	router.post(`${path}/experiences/`, isAuthenticated, AdminFormValidtions.newExperience, ExperienceController.save);
+	router.post(`${path}/experiences/`, isAuthenticated, AdminFormValidtions.newPost, ExperienceController.save);
 	router.get(`${path}/experiences/:id`, isAuthenticated, ExperienceController.edit);
 	router.put(`${path}/experiences/:id`, isAuthenticated, ExperienceController.save);
 	router.delete(`${path}/experiences/:id`, isAuthenticated, ExperienceController.delete);
