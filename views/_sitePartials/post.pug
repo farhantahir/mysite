@@ -4,7 +4,7 @@
     .desc.col-md-10.col-sm-8.col-xs-12
         h2.title
             a(href='http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/', target='_blank')=post.postTitle
-        span.text-muted Nov 20, 2017
+        span.text-muted=moment(post.publishedDate).format('MMM D, YYYY')
         p=post.description
         p
             a.more-link(href='http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/', target='_blank')

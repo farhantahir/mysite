@@ -10,6 +10,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const ExpressValidator = require('express-validator');
 const methodOverride = require('method-override');
+const moment = require('moment');
 const routes = require('./routes/index');
 const helpers = require('./helpers/index');
 
@@ -62,6 +63,7 @@ app.use((req, res, next) => {
 	res.locals.helpers = helpers;
 	res.locals.flashes = req.flash();
 	res.locals.user = req.user || null;
+	res.locals.moment = moment;
 	next();
 });
 
