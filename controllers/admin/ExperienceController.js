@@ -11,7 +11,7 @@ module.exports.index = async (req, res) => {
 module.exports.generateRecords = (experience) => {
 	{
 		const newExperience = experience;
-		newExperience.present = (typeof experience.present !== 'undefined' && experience.present) ? 'Yes' : 'No';
+		newExperience.presentDisplay = (typeof experience.present !== 'undefined' && experience.present) ? 'Yes' : 'No';
 		newExperience.actions = {
 			editURL: `/admin/experiences/${experience._id}`,
 			deleteURL: `/admin/experiences/${experience._id}`,
