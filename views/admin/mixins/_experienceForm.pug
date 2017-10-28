@@ -19,7 +19,7 @@ mixin experienceForm(experience = {})
                         input#from.form-control(type='text', aria-describedby='fromHelp', placeholder='Enter From' name='from' value=experience.from || null)
                     .form-group
                         label(for='to') To Date (e.g August 2017)
-                        input#to.form-control(type='text', aria-describedby='toHelp', placeholder='Enter To' name='to' value=experience.to || null)
+                        input#to.form-control(type='text', aria-describedby='toHelp', placeholder='Enter End Date' name='end' value=experience.end || null)
                     .form-group
                         label.control-label
                             input(type="checkbox" name="present" id="present" checked=experience.present ? true : false)
