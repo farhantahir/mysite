@@ -5,6 +5,7 @@ const PostSchema = new mongoose.Schema({
 		type: String,
 		trim: true,
 	},
+	slug: String,
 	published: Boolean,
 	publishedDate: Date,
 	description: String,
