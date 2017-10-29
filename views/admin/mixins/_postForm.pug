@@ -1,7 +1,7 @@
 mixin postForm(post = {})
     .col-md-12
         .card.mb-12
-            .card-header=`${ Object.keys(post).length ? `Edit ${post.title}` : 'New Post'}`
+            .card-header=`${ Object.keys(post).length ? `Edit ${post.postTitle}` : 'New Post'}`
             .card-body
                 include ../../components/alerts/flashes
                 -   const url = Object.keys(post).length ? `/admin/posts/${post._id}` : `/admin/posts/`;
