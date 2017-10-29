@@ -1,6 +1,6 @@
 .item.row
-    a.col-md-2.col-sm-4.col-xs-12(href='www.google.com', target='_blank')
-        img.img-responsive.project-image(src='/site/images/projects/project-5.png', alt='project name')
+    a.col-md-2.col-sm-4.col-xs-12(href=`/posts/${post.slug}`)
+        img.img-responsive.project-image(src=`/photos/posts/thumbnails/${post.thumbnail}`, alt='Thumbnail image')
     .desc.col-md-10.col-sm-8.col-xs-12
         h2.title
             a(href=`/posts/${post.slug}`)=post.postTitle
