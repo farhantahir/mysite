@@ -5,9 +5,7 @@ mixin postForm(post = {})
             .card-body
                 include ../../components/alerts/flashes
                 -   const url = Object.keys(post).length ? `/admin/posts/${post._id}` : `/admin/posts/`;
-                form(method='POST' action=url)
-                    if(Object.keys(post).length)
-                        input(type='hidden' value="put" name="_method")
+                form(method='POST' action=url enctype='multipart/form-data')
                     .form-group
                         label(for='title') Title
                         input#title.form-control(type='text', aria-describedby='titleHelp', placeholder='Enter title' name='postTitle' value=post.postTitle || null)
@@ -21,7 +19,12 @@ mixin postForm(post = {})
                         label.control-label
                             input(type="checkbox" name="published" id="published" checked=post.published ? true : false)
                             | Published
-
+                    label(for="thumbnail") Photo:
+                        input(type="file", id="thumbnail", name="thumbnail")
+                        if post.thumbnail
+                            img(src=`/photos/posts/thumbnails/${post.thumbnail}` alt=`${post.thumbnail}` width="300")
+                    <br/>
+                    <br/>
                     .form-group
                         label(for='content') Content
                         textarea(name='content' rows=100 cols=30 class='ckeditor')=post.content || null

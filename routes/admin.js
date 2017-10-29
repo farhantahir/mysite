@@ -37,9 +37,19 @@ const routeBuilder = (path = '/admin') => {
 	 */
 	router.get(`${path}/posts`, isAuthenticated, PostController.index);
 	router.get(`${path}/posts/new`, isAuthenticated, PostController.new);
-	router.post(`${path}/posts/`, isAuthenticated, AdminFormValidtions.newPost, PostController.save);
+	router.post(`${path}/posts/`,
+		isAuthenticated,
+		PostController.uploadThumbnail,
+		PostController.resizeThumbnail,
+		AdminFormValidtions.newPost,
+		PostController.save);
 	router.get(`${path}/posts/:id`, isAuthenticated, PostController.edit);
-	router.put(`${path}/posts/:id`, isAuthenticated, PostController.save);
+	router.post(`${path}/posts/:id`,
+		isAuthenticated,
+		PostController.uploadThumbnail,
+		PostController.resizeThumbnail,
+		AdminFormValidtions.newPost,
+		PostController.save);
 	router.delete(`${path}/posts/:id`, isAuthenticated, PostController.delete);
 
 	return router;

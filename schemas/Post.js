@@ -10,6 +10,7 @@ const PostSchema = new mongoose.Schema({
 	publishedDate: Date,
 	description: String,
 	content: String,
+	thumbnail: String,
 });
 
 module.exports = PostSchema;

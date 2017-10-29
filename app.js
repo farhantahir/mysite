@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(ExpressValidator());
 app.use(cookieParser());
-app.use(methodOverride((req, res)=>{
+app.use(methodOverride((req, res) => {
 	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
 		// look in urlencoded POST bodies and delete it
 		const method = req.body._method;

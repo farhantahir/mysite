@@ -86,7 +86,6 @@ module.exports.newPost = (req, res, next) => {
 			errorMessage: 'Content is required',
 		},
 	});
-
 	const errors = req.validationErrors();
 	if (errors) {
 		req.flash('error', errors.map(err => err.msg));
