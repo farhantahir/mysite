@@ -14,7 +14,7 @@ mixin postForm(post = {})
                         textarea(name='description' rows=10 cols=20 class='form-control')=post.description || null
                     .form-group
                         label(for='date') Published Date
-                        input#date.form-control(type='date', aria-describedby='titleHelp', placeholder='Enter Date' name='publishedDate' value=post.publishedDate || null)
+                        input#date.form-control.datepicker(type='text', aria-describedby='titleHelp', placeholder='Enter Date' name='publishedDate'  value=(post.publishedDate ? moment(post.publishedDate).format('MM/DD/YYYY') : null) )
                     .form-group
                         label.control-label
                             input(type="checkbox" name="published" id="published" checked=post.published ? true : false)
