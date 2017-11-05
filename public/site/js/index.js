@@ -1,26 +1,8 @@
-import 'jquery';
-import '../plugins/bootstrap/css/bootstrap.css';
-import '../plugins/bootstrap/js/bootstrap.min';
-import '../plugins/font-awesome/css/font-awesome.css';
-import '../css/styles.css';
+import './jquery.min';
+import './highlight';
+import './main';
+import '../css/highlishgt.css';
+import '../css/style.css';
+import '../css/monosocialiconsfont.css';
 
-
-jQuery(document).ready(($) => {
-	/*= ====== Skillset *======= */
-
-	$('.level-bar-inner').css('width', '0');
-
-	$(window).on('load', () => {
-		$('.level-bar-inner').each(function () {
-			const itemWidth = $(this).data('level');
-
-			$(this).animate({
-				width: itemWidth,
-			}, 800);
-		});
-	});
-
-	/* Bootstrap Tooltip for Skillset */
-	$('.level-label').tooltip();
-
-});
+hljs.initHighlightingOnLoad();

@@ -1,10 +1,11 @@
 extends layouts/app
 block content
-    include _sitePartials/header
-    .container.sections-wrapper
-        .row
-            .primary.col-md-12.col-sm-12.col-xs-12
-                include _sitePartials/post_detail
-            // //primary
-        include _sitePartials/footer
+    article.post
+        header
+            h1 Creating a New Theme
+            h2.headline
+                | September 28, 2014
+                br
+        section#post-body!=post.content
+        include _sitePartials/post_footer
 

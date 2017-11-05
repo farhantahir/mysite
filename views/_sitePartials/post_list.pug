@@ -1,0 +1,6 @@
+ul#post-list
+    each post in posts
+            li
+                a(href=`/posts/${post.slug}`)
+                    aside.dates Sep 28 2014
+                a(href=`/posts/${post.slug}`)=post.postTitle
