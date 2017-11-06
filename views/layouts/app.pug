@@ -9,8 +9,11 @@ html(lang='en-us')
         link(rel='stylesheet', href='/dist/Site.css')
     body
         nav.main-nav
-            a(href='https://themes.gohugo.io/theme/cactus/about/') About
-            a.cta(href='https://themes.gohugo.io/theme/cactus/index.xml') Subscribe
+            if(activePage === 'postDetail' || activePage === 'about')
+                a(href='/')
+                    span.arrow ←Home
+
+            a(href='/about') About
         section#wrapper
                 block content
                 nav#post-nav

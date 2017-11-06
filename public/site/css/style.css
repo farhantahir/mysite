@@ -70,7 +70,7 @@ h2 {
 }
 
 .profile #wrapper {
-	padding: 100px 40px 0px;
+	padding: 10px 40px 0px;
 	max-width: 800px;
 	margin: 0 auto;
 }
@@ -139,7 +139,6 @@ nav.main-nav a.cta {
 #wrapper {
   max-width: 800px;
   margin: 0 auto;
-  padding: 60px 40px 100px 40px;
 }
 
 #wrapper.home {
@@ -385,8 +384,8 @@ Post List
 
 #post-list li,#archive-list li {
 	border-top: 1px solid #eee;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	list-style-type: none;
 	margin-bottom: 0;
 }
@@ -624,7 +623,6 @@ h2.month {
 
 /* Media Queries */
 @media screen and (max-width: 540px) {
-	#wrapper { padding:20px 20px 20px 20px;}
 	.post { margin: 40px 0; }
 
 	#post-list, #archive-list { margin-top: 0; }
@@ -666,4 +664,11 @@ code {
 	background-color:#EEE; font-size:14px; 
 	padding: 4px; 
 	font-weight: 600;
+}
+
+.profile-image{
+	border-radius: 50%;
+	width:150px;
+	height:150px;
+
 }

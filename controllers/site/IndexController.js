@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const Project = mongoose.model('Project');
-const Experience = mongoose.model('Experience');
 const Post = mongoose.model('Post');
 
 module.exports.index = async (req, res) => {
@@ -10,11 +8,10 @@ module.exports.index = async (req, res) => {
 			publihsedDate: -1,
 		},
 	});
-	res.render('index', { posts });
+	res.render('index', { posts, activePage: 'home' });
 };
 
 module.exports.about = async (req, res) => {
-	const projects = await Project.find().sort('sort');
-	const experiences = await Experience.find().sort('sort');
-	res.render('about', { projects, experiences });
+	res.render('about',{ activePage: 'about' });
 };
+

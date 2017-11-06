@@ -1,11 +1,11 @@
 footer#post-meta.clearfix
     a(href='https://twitter.com/Your%20Twitter%20account')
-        img.avatar(src='https://themes.gohugo.io/theme/cactus/images/avatar.png')
+        img.avatar(src='/site/images/profile.jpg')
         div
             span.dark Farhan Tahir
-            span I'm an blogger.
+            span SSE - JS Enthusiast - Blogger
     section#sharing
-        a.twitter(href='https://twitter.com/intent/tweet?text=https%3a%2f%2fthemes.gohugo.io%2ftheme%2fcactus%2fpost%2fcreating-a-new-theme%2f - Creating%20a%20New%20Theme by @Your%20Twitter%20account')
+        a.twitter(href=`https://twitter.com/intent/tweet?text= ${hostName}/posts/${post.slug} - ${post.postTitle}`)
             span.icon-twitter  tweet
         a.facebook(href='#', onclick="\
         window.open(\
